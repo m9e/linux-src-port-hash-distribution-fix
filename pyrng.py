@@ -8,7 +8,7 @@ for i in range(0,mod):
   res[i]=0
 
 for i in range(32768,60999+1):
-  if (i%2==0):
+  if (i%2!=0):
     continue
   v = i%mod 
   res[v]=res[v]+1
