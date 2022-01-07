@@ -9,5 +9,5 @@ For naive implementations of mapping source ports to something else (e.g., a loa
 
 For a "better" fix that works in a wider range, you could implement perhaps a LCG to evenly map an unevenly distributed set of input integers to an evenly distributed output range, *roughly*, see https://en.m.wikipedia.org/wiki/Linear_congruential_generator
 
-However, for the linux problem, given that the least significant bit of a port number in Linux *only* really indicates whether it was creates with bind() or connect(), this example shows how the distribution corrects if you discard the least significant bit.
+However, for the linux problem, given that the least significant bit of a port number in Linux *only* really indicates whether it was creates with bind() or connect(), this example shows how the distribution corrects if you shift away the least significant bit (I originally said discard, but of course, port &= ~1, which is a true discard, will actually result in all even numbers anyhow and not change anything)
 
